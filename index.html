@@ -1,30 +1,1222 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Firebase RealTime Chat</title>
-    <link rel="stylesheet" href="./index.css">
-  </head>
-  <body>
-    <header>
-      <h2>Firebase RealTime Chat</h2>
-    </header>
-    
-    <div id="chat">
-      <!-- messages will display here -->
-      <ul id="messages"></ul>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Metadata -->
+  <title>Muhammad Raun | Dynamics 365 CRM & Power Platform Developer</title>
+  <meta name="title" content="Muhammad Raun | Dynamics 365 CRM & Power Platform Developer">
+  <meta name="description" content="Professional portfolio of Muhammad Raun, a Microsoft Dynamics 365 CRM and Power Platform Developer specializing in CRM customization, integrations, Power Apps, Power Automate, Dataverse, C#, and .NET.">
+  <meta name="keywords" content="Muhammad Raun, Dynamics 365 CRM, Microsoft Power Platform, Power Apps, Power Automate, Dataverse, C#, .NET, VeriPark, CRM Developer, Software Engineer">
+  <meta name="author" content="Muhammad Raun">
+  <meta name="robots" content="index, follow">
 
-      <!-- form to send message -->
-      <form id="message-form">
-        <input id="message-input" type="text" />
-        <button id="message-btn" type="submit">Send</button>
-      </form>
+  <!-- Open Graph / Facebook / LinkedIn -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://muhammadraun.dev/">
+  <meta property="og:title" content="Muhammad Raun | Dynamics 365 CRM & Power Platform Developer">
+  <meta property="og:description" content="Professional portfolio of Muhammad Raun, Senior Microsoft Dynamics CRM and Power Platform Developer with nearly 5 years of hands-on experience designing, customizing, integrating, and implementing robust CRM solutions.">
+  <meta property="og:image" content="assets/images/profile-hero.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Muhammad Raun | Dynamics 365 CRM & Power Platform Developer">
+  <meta name="twitter:description" content="Senior Microsoft Dynamics CRM and Power Platform Developer with nearly 5 years of hands-on experience designing, customizing, and integrating enterprise CRM solutions.">
+  <meta name="twitter:image" content="assets/images/profile-hero.png">
+
+  <!-- Favicon / Theme -->
+  <meta name="theme-color" content="#07090e">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230078d4'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='48' font-weight='800' fill='white'>MR</text></svg>">
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Muhammad Raun",
+    "jobTitle": "Software Engineer | Microsoft Dynamics 365 CRM & Power Platform Developer",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "VeriPark"
+    },
+    "description": "Senior Microsoft Dynamics CRM and Power Platform Developer with nearly 5 years of hands-on experience designing, customizing, integrating, and implementing robust CRM solutions.",
+    "email": "muhammadraun@outlook.com",
+    "telephone": "+923463456213",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Tank",
+      "addressRegion": "KPK",
+      "addressCountry": "Pakistan"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/muhammad-raun-27681a205/",
+      "https://www.instagram.com/muhammadraun/"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Subtle background grid -->
+  <div class="bg-grid-pattern" aria-hidden="true"></div>
+
+  <!-- ========================================================================
+       1. STICKY NAVIGATION BAR
+       ======================================================================== -->
+  <header id="navbar" class="navbar">
+    <div class="container">
+      <a href="#home" class="nav-brand" aria-label="Muhammad Raun Home">
+        <div class="nav-brand-logo">MR</div>
+        <div class="nav-brand-text">
+          <span class="nav-brand-name">Muhammad Raun</span>
+          <span class="nav-brand-badge">Dynamics 365 & Power Platform</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="nav-links" aria-label="Primary Navigation">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#certification" class="nav-link">Certifications</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Desktop CTA & Mobile Toggle -->
+      <div class="nav-cta">
+        <a href="#contact" class="btn btn-primary btn-sm">
+          <span>Let's Work Together</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="7" y1="17" x2="17" y2="7"></line>
+            <polyline points="7 7 17 7 17 17"></polyline>
+          </svg>
+        </a>
+
+        <button id="mobileToggle" class="mobile-nav-toggle" aria-label="Toggle mobile menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </div>
+  </header>
 
-    <!-- scripts -->
-    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
-    <script src="index.js"></script>
-  </body>
+  <!-- Mobile Drawer Menu -->
+  <div id="mobileMenu" class="mobile-menu" aria-label="Mobile Navigation">
+    <a href="#home" class="mobile-nav-link">Home</a>
+    <a href="#about" class="mobile-nav-link">About</a>
+    <a href="#experience" class="mobile-nav-link">Experience</a>
+    <a href="#skills" class="mobile-nav-link">Skills</a>
+    <a href="#projects" class="mobile-nav-link">Projects</a>
+    <a href="#certification" class="mobile-nav-link">Certifications</a>
+    <a href="#education" class="mobile-nav-link">Education</a>
+    <a href="#contact" class="mobile-nav-link">Contact</a>
+    <div style="padding-top: 12px;">
+      <a href="#contact" class="btn btn-primary" style="width: 100%;">
+        <span>Let's Work Together</span>
+      </a>
+    </div>
+  </div>
+
+  <main>
+    <!-- ======================================================================
+         2. HERO SECTION
+         ====================================================================== -->
+    <section id="home" class="hero-section">
+      <div class="container">
+        <div class="hero-grid">
+          
+          <!-- Hero Left Content -->
+          <div class="hero-content">
+            <div class="hero-eyebrow">
+              <span class="status-dot"></span>
+              <span class="hero-eyebrow-text">SOFTWARE ENGINEER • CRM & POWER PLATFORM</span>
+            </div>
+
+            <h1 class="hero-title">
+              Building <span class="text-gradient-accent">Smarter CRM Solutions</span> for Modern Businesses.
+            </h1>
+
+            <p class="hero-description">
+              I specialize in Microsoft Dynamics 365 CRM and Power Platform, helping organizations transform complex business processes into scalable, automated, and user-focused solutions.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#projects" class="btn btn-primary btn-lg">
+                <span>View My Work</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <polyline points="19 12 12 19 5 12"></polyline>
+                </svg>
+              </a>
+
+              <a href="#contact" class="btn btn-secondary btn-lg">
+                <span>Let's Connect</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </a>
+            </div>
+
+            <!-- Social Links -->
+            <div class="hero-socials">
+              <a href="https://www.linkedin.com/in/muhammad-raun-27681a205/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn Profile">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+              </a>
+
+              <a href="https://www.instagram.com/muhammadraun/" target="_blank" rel="noopener noreferrer" class="social-icon-btn instagram" aria-label="Instagram Profile">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+              </a>
+
+              <span style="font-size: 0.85rem; color: var(--text-muted); margin-left: 8px;">
+                Remote Software Developer @ VeriPark (UAE)
+              </span>
+            </div>
+          </div>
+
+          <!-- Hero Right Profile Image & Floating Tech Elements -->
+          <div class="hero-visual-wrapper">
+            <div class="hero-halo"></div>
+
+            <div class="hero-image-card">
+              <div class="hero-image-inner">
+                <img src="assets/images/profile-hero.png" alt="Muhammad Raun - Software Engineer and Dynamics 365 CRM Developer" width="360" height="360" loading="eager">
+              </div>
+            </div>
+
+            <!-- Floating Animated Tech Badges -->
+            <div class="tech-chip tech-chip-d365" title="Microsoft Dynamics 365 CE / CRM">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+              <span>Dynamics 365</span>
+            </div>
+
+            <div class="tech-chip tech-chip-power" title="Microsoft Power Platform">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+              </svg>
+              <span>Power Platform</span>
+            </div>
+
+            <div class="tech-chip tech-chip-dataverse" title="Microsoft Dataverse">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <ellipse cx="12" cy="5" rx="9" ry="3"/>
+                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+              </svg>
+              <span>Dataverse</span>
+            </div>
+
+            <div class="tech-chip tech-chip-automate" title="Power Automate Cloud Flows">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+              </svg>
+              <span>Power Automate</span>
+            </div>
+
+            <div class="tech-chip tech-chip-csharp" title="C# & .NET Core">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="16 18 22 12 16 6"/>
+                <polyline points="8 6 2 12 8 18"/>
+              </svg>
+              <span>C#</span>
+            </div>
+
+            <div class="tech-chip tech-chip-dotnet" title=".NET Web APIs & MVC">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                <line x1="8" y1="21" x2="16" y2="21"/>
+                <line x1="12" y1="17" x2="12" y2="21"/>
+              </svg>
+              <span>.NET</span>
+            </div>
+
+            <!-- Floating Experience Badge -->
+            <div class="hero-exp-badge">
+              <div class="exp-badge-number">5+</div>
+              <div class="exp-badge-text">
+                <span class="exp-badge-title">Years Experience</span>
+                <span class="exp-badge-subtitle">Enterprise CRM</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         3. ABOUT SECTION
+         ====================================================================== -->
+    <section id="about" class="section">
+      <div class="container">
+        
+        <div class="section-header">
+          <div class="section-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="12" y1="16" x2="12" y2="12"/>
+              <line x1="12" y1="8" x2="12.01" y2="8"/>
+            </svg>
+            <span>Professional Profile</span>
+          </div>
+          <h2 class="section-title">About <span class="text-gradient-accent">Me</span></h2>
+          <p class="section-subtitle">Delivering high-performance CRM architecture, automated workflows, and enterprise digital transformation.</p>
+        </div>
+
+        <div class="about-grid">
+          <!-- Column 1: Professional Image Card -->
+          <div class="about-image-card">
+            <img src="assets/images/profile-about.png" alt="Muhammad Raun at software engineering workstation" width="500" height="600" loading="lazy">
+            <div class="about-image-overlay">
+              <div class="about-overlay-name">Muhammad Raun</div>
+              <div class="about-overlay-title">Software Engineer | Dynamics 365 CRM & Power Platform Developer</div>
+              <div class="about-overlay-loc">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <span>Tank, KPK, Pakistan • Operating Globally</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 2: Exact Professional Bio & Stats -->
+          <div class="about-content">
+            <p class="about-lead">
+              I am a Senior Microsoft Dynamics CRM and Power Platform Developer with nearly 5 years of hands-on experience in designing, customizing, integrating, and implementing robust CRM solutions.
+            </p>
+
+            <p class="about-paragraph">
+              My expertise includes Microsoft Dynamics 365 CE/CRM, Power Apps, Power Automate, Dataverse, plugins, workflows, integrations, APIs, SSIS, C#, ASP.NET MVC, JavaScript, and SQL Server.
+            </p>
+
+            <p class="about-paragraph">
+              I enjoy solving complex business problems through technology and building practical solutions that improve business processes, automation, customer experiences, and operational efficiency.
+            </p>
+
+            <!-- Professional Statistics Cards -->
+            <div class="about-stats-grid">
+              <div class="stat-card">
+                <span class="stat-value">5+</span>
+                <span class="stat-label">Years Experience</span>
+                <span class="stat-unit">Enterprise CRM & .NET</span>
+              </div>
+
+              <div class="stat-card">
+                <span class="stat-value">D365</span>
+                <span class="stat-label">Dynamics 365 CRM</span>
+                <span class="stat-unit">Cloud & On-Premises</span>
+              </div>
+
+              <div class="stat-card">
+                <span class="stat-value">Power</span>
+                <span class="stat-label">Power Platform</span>
+                <span class="stat-unit">Apps & Automate</span>
+              </div>
+
+              <div class="stat-card">
+                <span class="stat-value">Multi</span>
+                <span class="stat-label">CRM Integrations</span>
+                <span class="stat-unit">APIs & Gateways</span>
+              </div>
+
+              <div class="stat-card">
+                <span class="stat-value">PL-200</span>
+                <span class="stat-label">PL-200 Certified</span>
+                <span class="stat-unit">Microsoft Associate</span>
+              </div>
+
+              <div class="stat-card">
+                <span class="stat-value">100%</span>
+                <span class="stat-label">Enterprise Quality</span>
+                <span class="stat-unit">Scalable Code</span>
+              </div>
+            </div>
+
+            <div style="margin-top: 12px;">
+              <a href="#experience" class="btn btn-outline btn-sm">
+                <span>Explore Professional Experience</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         4 & 5. WORK EXPERIENCE (CURRENT + PREVIOUS TIMELINE)
+         ====================================================================== -->
+    <section id="experience" class="section" style="background: rgba(11, 15, 25, 0.5);">
+      <div class="container">
+        
+        <div class="section-header">
+          <div class="section-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+            </svg>
+            <span>Career Milestones</span>
+          </div>
+          <h2 class="section-title">Work <span class="text-gradient-accent">Experience</span></h2>
+          <p class="section-subtitle">Proven track record developing high-scale CRM systems for international enterprise clients.</p>
+        </div>
+
+        <div class="experience-container">
+          
+          <!-- 4. Current Experience Spotlight Card: VeriPark -->
+          <div class="current-role-card">
+            <div class="current-role-badge-top">
+              <span class="status-dot"></span>
+              <span>Current Role • Active Engagement</span>
+            </div>
+
+            <div class="current-role-header">
+              <div>
+                <h3 class="current-role-title">Software Developer – CRM</h3>
+                <div class="current-company">
+                  <span>VeriPark</span>
+                  <span style="color: var(--text-muted);">•</span>
+                  <span style="color: var(--text-secondary); font-size: 0.95rem;">United Arab Emirates (Remote)</span>
+                </div>
+              </div>
+
+              <div class="current-period-pill">
+                September 2025 – Present
+              </div>
+            </div>
+
+            <p class="current-role-desc">
+              "Designing, customizing, and implementing Microsoft Dynamics 365 CRM solutions with a focus on seamless customer experiences, scalable applications, integrations, and digital transformation."
+            </p>
+
+            <!-- Role Highlights -->
+            <div class="highlights-container">
+              <span class="highlight-pill">Dynamics 365 CRM</span>
+              <span class="highlight-pill">Power Platform</span>
+              <span class="highlight-pill">CRM Customization</span>
+              <span class="highlight-pill">Integrations</span>
+              <span class="highlight-pill">Customer Experience</span>
+              <span class="highlight-pill">Digital Transformation</span>
+            </div>
+
+            <!-- Spotlight Project: Bank AlJazira (KSA) - VeriLoan Project -->
+            <div class="spotlight-box">
+              <div class="spotlight-box-header">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2">
+                  <path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v4M12 14v4M16 14v4"/>
+                </svg>
+                <div class="spotlight-box-title">Bank AlJazira (KSA) — VeriLoan Project</div>
+              </div>
+              <div class="spotlight-list">
+                <div class="spotlight-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Dynamics CRM customization & architecture</span>
+                </div>
+                <div class="spotlight-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>VeriLink financial system integration</span>
+                </div>
+                <div class="spotlight-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>CRM entities, forms, workflows and business rules</span>
+                </div>
+                <div class="spotlight-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Real-time data synchronization & loan processing support</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. Previous Experience Vertical Timeline -->
+          <div class="timeline">
+            
+            <!-- Timeline Item 1: Skysoft Connections -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="glass-card timeline-card">
+                <div class="timeline-card-header">
+                  <div>
+                    <h3 class="timeline-role">Senior Microsoft Dynamics CRM Developer</h3>
+                    <div class="timeline-company">Skysoft Connections — Islamabad, Pakistan</div>
+                  </div>
+                  <div class="timeline-period">August 2022 – September 2025</div>
+                </div>
+
+                <p class="timeline-desc">
+                  Spearheaded core CRM customization, complex business process automation, enterprise-level third-party integrations, and web application development.
+                </p>
+
+                <div class="timeline-responsibilities">
+                  <div class="resp-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                    <span>Dynamics CRM customizations, extensions, plugins, and custom workflow activities</span>
+                  </div>
+                  <div class="resp-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                    <span>CRM integrations with third-party web services, payment gateways, and external REST APIs</span>
+                  </div>
+                  <div class="resp-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                    <span>SSIS data migration pipelines and large-scale data extraction and synchronization</span>
+                  </div>
+                  <div class="resp-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                    <span>Canvas Apps and Model-Driven Apps developed for cross-platform enterprise mobility</span>
+                  </div>
+                  <div class="resp-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                    <span>Power Automate cloud flows and Power BI business intelligence dashboards</span>
+                  </div>
+                  <div class="resp-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                    <span>ASP.NET MVC custom web portals integrated directly with Dynamics CRM & .NET Web APIs</span>
+                  </div>
+                </div>
+
+                <div class="timeline-tech-tags">
+                  <span class="tag-pill">Dynamics CRM</span>
+                  <span class="tag-pill">C# Plugins</span>
+                  <span class="tag-pill">Canvas Apps</span>
+                  <span class="tag-pill">Power Automate</span>
+                  <span class="tag-pill">SSIS</span>
+                  <span class="tag-pill">Power BI</span>
+                  <span class="tag-pill">ASP.NET MVC</span>
+                  <span class="tag-pill">Web API</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Timeline Item 2: Netrex Cloud -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="glass-card timeline-card">
+                <div class="timeline-card-header">
+                  <div>
+                    <h3 class="timeline-role">Web Developer</h3>
+                    <div class="timeline-company">Netrex Cloud — D.I. Khan, Pakistan</div>
+                  </div>
+                  <div class="timeline-period">June 2021 – July 2022</div>
+                </div>
+
+                <p class="timeline-desc">
+                  Engineered performant full-stack web applications, relational databases, responsive frontends, and robust application integrations.
+                </p>
+
+                <div class="timeline-responsibilities">
+                  <div class="resp-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                    <span>Frontend & backend development for high-availability web applications</span>
+                  </div>
+                  <div class="resp-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                    <span>Responsive UI design with modern HTML5, CSS3, and JavaScript</span>
+                  </div>
+                  <div class="resp-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                    <span>Backend development and business logic using C# and .NET</span>
+                  </div>
+                  <div class="resp-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                    <span>Database design, query tuning, and stored procedures in SQL Server</span>
+                  </div>
+                  <div class="resp-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                    <span>System integrations and third-party RESTful API implementation</span>
+                  </div>
+                </div>
+
+                <div class="timeline-tech-tags">
+                  <span class="tag-pill">C#</span>
+                  <span class="tag-pill">SQL Server</span>
+                  <span class="tag-pill">JavaScript</span>
+                  <span class="tag-pill">HTML5</span>
+                  <span class="tag-pill">CSS3</span>
+                  <span class="tag-pill">REST APIs</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         6. SKILLS SECTION (CATEGORIZED, NO FAKE BARS)
+         ====================================================================== -->
+    <section id="skills" class="section">
+      <div class="container">
+        
+        <div class="section-header">
+          <div class="section-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+            <span>Technical Capabilities</span>
+          </div>
+          <h2 class="section-title">Skills & <span class="text-gradient-accent">Competencies</span></h2>
+          <p class="section-subtitle">Deep expertise across Microsoft cloud infrastructure, CRM customization, .NET engineering, and enterprise data.</p>
+        </div>
+
+        <!-- Filter Category Tabs -->
+        <div class="skills-tabs">
+          <button type="button" class="skill-tab-btn active" data-category="all">All Domains</button>
+          <button type="button" class="skill-tab-btn" data-category="crm">CRM & Microsoft</button>
+          <button type="button" class="skill-tab-btn" data-category="power-platform">Power Platform</button>
+          <button type="button" class="skill-tab-btn" data-category="crm-development">CRM Development</button>
+          <button type="button" class="skill-tab-btn" data-category="development">Full-Stack & .NET</button>
+          <button type="button" class="skill-tab-btn" data-category="integration-data">Integration & Data</button>
+          <button type="button" class="skill-tab-btn" data-category="tools">Tools & Environment</button>
+        </div>
+
+        <!-- Skills Grid (6 Categories) -->
+        <div class="skills-grid">
+          
+          <!-- Category 1: CRM & Microsoft -->
+          <div class="glass-card skill-category-card" data-cat-id="crm">
+            <div class="skill-card-header">
+              <div class="skill-card-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="3" width="7" height="7"/>
+                  <rect x="14" y="3" width="7" height="7"/>
+                  <rect x="14" y="14" width="7" height="7"/>
+                  <rect x="3" y="14" width="7" height="7"/>
+                </svg>
+              </div>
+              <h3 class="skill-card-title">CRM & Microsoft</h3>
+            </div>
+            <div class="skill-chips-wrap">
+              <span class="skill-badge"><span class="skill-badge-dot"></span>Microsoft Dynamics 365 CE/CRM</span>
+              <span class="skill-badge"><span class="skill-badge-dot"></span>MSCRM On-Premises</span>
+              <span class="skill-badge"><span class="skill-badge-dot"></span>Dynamics 365 Sales</span>
+              <span class="skill-badge"><span class="skill-badge-dot"></span>Dynamics 365 Customer Service</span>
+              <span class="skill-badge"><span class="skill-badge-dot"></span>Dynamics 365 Marketing</span>
+              <span class="skill-badge"><span class="skill-badge-dot"></span>Microsoft Dataverse</span>
+            </div>
+          </div>
+
+          <!-- Category 2: Power Platform -->
+          <div class="glass-card skill-category-card" data-cat-id="power-platform">
+            <div class="skill-card-header">
+              <div class="skill-card-icon" style="color: #c084fc; border-color: rgba(124, 58, 237, 0.3);">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                </svg>
+              </div>
+              <h3 class="skill-card-title">Power Platform</h3>
+            </div>
+            <div class="skill-chips-wrap">
+              <span class="skill-badge"><span class="skill-badge-dot" style="background: #a855f7;"></span>Power Apps</span>
+              <span class="skill-badge"><span class="skill-badge-dot" style="background: #a855f7;"></span>Model-Driven Apps</span>
+              <span class="skill-badge"><span class="skill-badge-dot" style="background: #a855f7;"></span>Canvas Apps</span>
+              <span class="skill-badge"><span class="skill-badge-dot" style="background: #a855f7;"></span>Power Automate</span>
+              <span class="skill-badge"><span class="skill-badge-dot" style="background: #a855f7;"></span>Power BI</span>
+              <span class="skill-badge"><span class="skill-badge-dot" style="background: #a855f7;"></span>Power Virtual Agent / Copilot Studio</span>
+            </div>
+          </div>
+
+          <!-- Category 3: CRM Development -->
+          <div class="glass-card skill-category-card" data-cat-id="crm-development">
+            <div class="skill-card-header">
+              <div class="skill-card-icon" style="color: #38bdf8; border-color: rgba(6, 182, 212, 0.3);">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="4" y="4" width="16" height="16" rx="2" ry="2"/>
+                  <rect x="9" y="9" width="6" height="6"/>
+                  <line x1="9" y1="1" x2="9" y2="4"/>
+                  <line x1="15" y1="1" x2="15" y2="4"/>
+                  <line x1="9" y1="20" x2="9" y2="23"/>
+                  <line x1="15" y1="20" x2="15" y2="23"/>
+                  <line x1="20" y1="9" x2="23" y2="9"/>
+                  <line x1="20" y1="14" x2="23" y2="14"/>
+                  <line x1="1" y1="9" x2="4" y2="9"/>
+                  <line x1="1" y1="14" x2="4" y2="14"/>
+                </svg>
+              </div>
+              <h3 class="skill-card-title">CRM Development</h3>
+            </div>
+            <div class="skill-chips-wrap">
+              <span class="skill-badge"><span class="skill-badge-dot"></span>Plugins</span>
+              <span class="skill-badge"><span class="skill-badge-dot"></span>Workflows</span>
+              <span class="skill-badge"><span class="skill-badge-dot"></span>Custom Actions</span>
+              <span class="skill-badge"><span class="skill-badge-dot"></span>Web Resources</span>
+              <span class="skill-badge"><span class="skill-badge-dot"></span>Business Rules</span>
+              <span class="skill-badge"><span class="skill-badge-dot"></span>Business Process Flows</span>
+              <span class="skill-badge"><span class="skill-badge-dot"></span>Entities & Fields</span>
+              <span class="skill-badge"><span class="skill-badge-dot"></span>Forms & Views</span>
+              <span class="skill-badge"><span class="skill-badge-dot"></span>Security Roles</span>
+              <span class="skill-badge"><span class="skill-badge-dot"></span>CRM Integrations</span>
+            </div>
+          </div>
+
+          <!-- Category 4: Development -->
+          <div class="glass-card skill-category-card" data-cat-id="development">
+            <div class="skill-card-header">
+              <div class="skill-card-icon" style="color: #60a5fa; border-color: rgba(59, 130, 246, 0.3);">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="16 18 22 12 16 6"/>
+                  <polyline points="8 6 2 12 8 18"/>
+                </svg>
+              </div>
+              <h3 class="skill-card-title">Full-Stack & .NET</h3>
+            </div>
+            <div class="skill-chips-wrap">
+              <span class="skill-badge"><span class="skill-badge-dot" style="background: #60a5fa;"></span>C#</span>
+              <span class="skill-badge"><span class="skill-badge-dot" style="background: #60a5fa;"></span>.NET</span>
+              <span class="skill-badge"><span class="skill-badge-dot" style="background: #60a5fa;"></span>ASP.NET MVC</span>
+              <span class="skill-badge"><span class="skill-badge-dot" style="background: #60a5fa;"></span>Web API</span>
+              <span class="skill-badge"><span class="skill-badge-dot" style="background: #60a5fa;"></span>JavaScript</span>
+              <span class="skill-badge"><span class="skill-badge-dot" style="background: #60a5fa;"></span>jQuery</span>
+              <span class="skill-badge"><span class="skill-badge-dot" style="background: #60a5fa;"></span>AngularJS</span>
+              <span class="skill-badge"><span class="skill-badge-dot" style="background: #60a5fa;"></span>HTML5</span>
+              <span class="skill-badge"><span class="skill-badge-dot" style="background: #60a5fa;"></span>CSS3</span>
+              <span class="skill-badge"><span class="skill-badge-dot" style="background: #60a5fa;"></span>Bootstrap 5</span>
+            </div>
+          </div>
+
+          <!-- Category 5: Integration & Data -->
+          <div class="glass-card skill-category-card" data-cat-id="integration-data">
+            <div class="skill-card-header">
+              <div class="skill-card-icon" style="color: #22d3ee; border-color: rgba(6, 182, 212, 0.3);">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <ellipse cx="12" cy="5" rx="9" ry="3"/>
+                  <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
+                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+                </svg>
+              </div>
+              <h3 class="skill-card-title">Integration & Data</h3>
+            </div>
+            <div class="skill-chips-wrap">
+              <span class="skill-badge"><span class="skill-badge-dot" style="background: #22d3ee;"></span>REST APIs</span>
+              <span class="skill-badge"><span class="skill-badge-dot" style="background: #22d3ee;"></span>Web APIs</span>
+              <span class="skill-badge"><span class="skill-badge-dot" style="background: #22d3ee;"></span>SSIS Data Migration</span>
+              <span class="skill-badge"><span class="skill-badge-dot" style="background: #22d3ee;"></span>SQL Server</span>
+              <span class="skill-badge"><span class="skill-badge-dot" style="background: #22d3ee;"></span>MySQL</span>
+              <span class="skill-badge"><span class="skill-badge-dot" style="background: #22d3ee;"></span>XML / JSON</span>
+              <span class="skill-badge"><span class="skill-badge-dot" style="background: #22d3ee;"></span>Microsoft Graph API</span>
+            </div>
+          </div>
+
+          <!-- Category 6: Tools -->
+          <div class="glass-card skill-category-card" data-cat-id="tools">
+            <div class="skill-card-header">
+              <div class="skill-card-icon" style="color: #34d399; border-color: rgba(16, 185, 129, 0.3);">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                </svg>
+              </div>
+              <h3 class="skill-card-title">Tools & Environment</h3>
+            </div>
+            <div class="skill-chips-wrap">
+              <span class="skill-badge"><span class="skill-badge-dot" style="background: #34d399;"></span>Visual Studio 2015/2019/2022</span>
+              <span class="skill-badge"><span class="skill-badge-dot" style="background: #34d399;"></span>VS Code</span>
+              <span class="skill-badge"><span class="skill-badge-dot" style="background: #34d399;"></span>Postman</span>
+              <span class="skill-badge"><span class="skill-badge-dot" style="background: #34d399;"></span>XrmToolBox</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         7. FEATURED PROJECTS SECTION
+         ====================================================================== -->
+    <section id="projects" class="section" style="background: rgba(11, 15, 25, 0.5);">
+      <div class="container">
+        
+        <div class="section-header">
+          <div class="section-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+            <span>Verified Portfolio</span>
+          </div>
+          <h2 class="section-title">Featured <span class="text-gradient-accent">Projects</span></h2>
+          <p class="section-subtitle">Real-world Dynamics 365 customizations, integrations, and Power Platform solutions built for enterprise scale.</p>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="projects-filter-bar">
+          <button type="button" class="project-filter-btn active" data-filter="all">All Projects (10)</button>
+          <button type="button" class="project-filter-btn" data-filter="crm">Dynamics 365 & CRM</button>
+          <button type="button" class="project-filter-btn" data-filter="power">Power Platform</button>
+          <button type="button" class="project-filter-btn" data-filter="integration">Enterprise Integrations</button>
+          <button type="button" class="project-filter-btn" data-filter="dev">Full-Stack & .NET</button>
+        </div>
+
+        <!-- Projects Grid (Injected dynamically from data.js, top 6 first) -->
+        <div id="projectsGrid" class="projects-grid"></div>
+
+        <!-- View More Projects Button -->
+        <div id="viewMoreProjectsWrap" class="view-more-container">
+          <button id="viewMoreProjectsBtn" type="button" class="btn btn-secondary btn-lg">
+            <span>View All 10 Projects</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         8. CERTIFICATION SECTION
+         ====================================================================== -->
+    <section id="certification" class="section">
+      <div class="container">
+        
+        <div class="section-header">
+          <div class="section-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 15l-2 5l-4 -2l-4 2l2 -5l-4 -4l5 -1l3 -5l3 5l5 1z"/>
+            </svg>
+            <span>Official Credential</span>
+          </div>
+          <h2 class="section-title">Professional <span class="text-gradient-accent">Certification</span></h2>
+          <p class="section-subtitle">Industry-recognized certification from Microsoft validating advanced functional and technical competence.</p>
+        </div>
+
+        <div class="cert-wrapper">
+          <div class="glass-card cert-card">
+            <div class="cert-grid">
+              
+              <!-- Microsoft Credential Badge Graphic -->
+              <div class="cert-badge-col">
+                <div class="ms-cert-badge-graphic">
+                  <div class="ms-cert-hexagon">
+                    <div class="ms-logo-squares">
+                      <div class="ms-square ms-sq-red"></div>
+                      <div class="ms-square ms-sq-green"></div>
+                      <div class="ms-square ms-sq-blue"></div>
+                      <div class="ms-square ms-sq-yellow"></div>
+                    </div>
+                    <div class="ms-cert-code-tag">PL-200</div>
+                    <div class="cert-issuer-text">Microsoft</div>
+                  </div>
+                </div>
+
+                <div class="cert-verified-pill">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                  <span>Verified Credential</span>
+                </div>
+              </div>
+
+              <!-- Certification Details -->
+              <div class="cert-details-col">
+                <div class="cert-exam-label">Microsoft Certified Associate • Exam PL-200</div>
+                <h3 class="cert-title">Power Platform Functional Consultant Associate</h3>
+                
+                <p class="cert-desc">
+                  Validates functional expertise in configuring Microsoft Dataverse, creating model-driven and canvas Power Apps, automating business processes using Power Automate, and architecting end-to-end cloud business solutions.
+                </p>
+
+                <div class="cert-skills-header">Skills Measured & Verified:</div>
+                <div class="cert-skills-list">
+                  <div class="cert-skill-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>Configure Microsoft Dataverse</span>
+                  </div>
+                  <div class="cert-skill-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>Create Apps using Power Apps</span>
+                  </div>
+                  <div class="cert-skill-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>Create & Manage Power Automate</span>
+                  </div>
+                  <div class="cert-skill-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>Implement Power Virtual Agents / Copilot</span>
+                  </div>
+                  <div class="cert-skill-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>Design & Integrate Business Process Flows</span>
+                  </div>
+                  <div class="cert-skill-item">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>Security Roles & Data Governance</span>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         9. EDUCATION SECTION
+         ====================================================================== -->
+    <section id="education" class="section" style="background: rgba(11, 15, 25, 0.5);">
+      <div class="container">
+        
+        <div class="section-header">
+          <div class="section-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+              <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+            </svg>
+            <span>Academic Background</span>
+          </div>
+          <h2 class="section-title">Education & <span class="text-gradient-accent">Foundations</span></h2>
+          <p class="section-subtitle">Strong computer science principles and technical training supporting real-world engineering excellence.</p>
+        </div>
+
+        <div class="education-grid">
+          
+          <!-- Degree 1 -->
+          <div class="glass-card edu-card">
+            <div class="edu-icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+              </svg>
+            </div>
+            <div class="edu-content">
+              <div class="edu-type-badge">Undergraduate Degree</div>
+              <h3 class="edu-degree">Bachelor of Science in Computer Science (BSCS)</h3>
+              <div class="edu-institution">Gomal University</div>
+              <div class="edu-location">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <span>Dera Ismail Khan, Pakistan</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Degree 2 -->
+          <div class="glass-card edu-card">
+            <div class="edu-icon-wrap" style="color: #c084fc; border-color: rgba(124, 58, 237, 0.3);">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="8" r="7"/>
+                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/>
+              </svg>
+            </div>
+            <div class="edu-content">
+              <div class="edu-type-badge">Higher Secondary School Certificate</div>
+              <h3 class="edu-degree">FSC [Pre-ICS]</h3>
+              <div class="edu-institution">Iqra Education System School and College</div>
+              <div class="edu-location">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <span>Tank, Pakistan</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         10. CONTACT / LET'S WORK TOGETHER SECTION
+         ====================================================================== -->
+    <section id="contact" class="section">
+      <div class="container">
+        
+        <div class="contact-grid">
+          
+          <!-- Contact Left: Value Proposition & Direct Info -->
+          <div class="contact-info-col">
+            <div class="contact-header-text">
+              <div class="section-badge" style="margin-bottom: 0;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                </svg>
+                <span>Initiate Collaboration</span>
+              </div>
+              <h2 class="contact-title">Have a <span class="text-gradient-accent">CRM Challenge?</span></h2>
+              <p class="contact-subtitle">
+                "Let's turn your business requirements into scalable CRM and Power Platform solutions."
+              </p>
+            </div>
+
+            <!-- Direct Contact Methods -->
+            <div class="contact-cards-list">
+              
+              <a href="mailto:muhammadraun@outlook.com" class="contact-direct-card">
+                <div class="contact-card-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </div>
+                <div class="contact-card-content">
+                  <span class="contact-card-label">Direct Email</span>
+                  <span class="contact-card-value">muhammadraun@outlook.com</span>
+                </div>
+              </a>
+
+              <a href="tel:+923463456213" class="contact-direct-card">
+                <div class="contact-card-icon" style="color: #34d399; background: rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.3);">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                  </svg>
+                </div>
+                <div class="contact-card-content">
+                  <span class="contact-card-label">Direct Phone / WhatsApp</span>
+                  <span class="contact-card-value">(+92) 346 3456213</span>
+                </div>
+              </a>
+
+              <div class="contact-direct-card">
+                <div class="contact-card-icon" style="color: #c084fc; background: rgba(124, 58, 237, 0.15); border-color: rgba(124, 58, 237, 0.3);">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <div class="contact-card-content">
+                  <span class="contact-card-label">Current Base</span>
+                  <span class="contact-card-value">Tank, KPK, Pakistan • Available for Remote Global Work</span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Quick Action Buttons -->
+            <div class="hero-actions" style="margin-top: 6px;">
+              <a href="mailto:muhammadraun@outlook.com" class="btn btn-primary">
+                <span>Email Me Directly</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </a>
+
+              <a href="https://www.linkedin.com/in/muhammad-raun-27681a205/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                <span>Connect on LinkedIn</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+              </a>
+            </div>
+
+          </div>
+
+          <!-- Contact Right: Contact Form -->
+          <div class="glass-card contact-form-card">
+            <form id="contactForm" class="contact-form">
+              <div class="form-group">
+                <label for="contactName" class="form-label">Your Name</label>
+                <input type="text" id="contactName" class="form-input" placeholder="e.g. John Doe" required>
+              </div>
+
+              <div class="form-group">
+                <label for="contactEmail" class="form-label">Your Email Address</label>
+                <input type="email" id="contactEmail" class="form-input" placeholder="e.g. john@enterprise.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="contactSubject" class="form-label">Subject</label>
+                <input type="text" id="contactSubject" class="form-input" placeholder="e.g. Dynamics 365 Architecture / Consulting Inquiry" required>
+              </div>
+
+              <div class="form-group">
+                <label for="contactMessage" class="form-label">Message / Project Scope</label>
+                <textarea id="contactMessage" class="form-textarea" rows="4" placeholder="Briefly describe your CRM needs, integration requirements, or upcoming project scope..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+                <span>Send Message</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </button>
+
+              <div style="font-size: 0.8rem; color: var(--text-dim); text-align: center; margin-top: 4px;">
+                Direct inquiries sent to muhammadraun@outlook.com. Response within 24 hours.
+              </div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       11. FOOTER
+       ======================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      
+      <div class="footer-top">
+        <!-- Brand & Positioning -->
+        <div class="footer-brand">
+          <div class="footer-logo-row">
+            <div class="nav-brand-logo">MR</div>
+            <div>
+              <div style="font-weight: 700; font-size: 1.1rem; color: #fff;">Muhammad Raun</div>
+              <div style="font-size: 0.78rem; color: #38bdf8;">Software Engineer | Dynamics 365 CRM & Power Platform</div>
+            </div>
+          </div>
+          <p class="footer-tagline">
+            Senior Microsoft Dynamics CRM and Power Platform Developer with nearly 5 years of hands-on experience designing, customizing, integrating, and implementing robust enterprise CRM solutions.
+          </p>
+          <div class="contact-social-bar">
+            <a href="https://www.linkedin.com/in/muhammad-raun-27681a205/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn Profile">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+            </a>
+            <a href="https://www.instagram.com/muhammadraun/" target="_blank" rel="noopener noreferrer" class="social-icon-btn instagram" aria-label="Instagram Profile">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <div class="footer-col-title">Navigation</div>
+          <ul class="footer-links-list">
+            <li><a href="#home" class="footer-link">Home</a></li>
+            <li><a href="#about" class="footer-link">About Me</a></li>
+            <li><a href="#experience" class="footer-link">Professional Experience</a></li>
+            <li><a href="#skills" class="footer-link">Skills & Stack</a></li>
+            <li><a href="#projects" class="footer-link">Featured Projects</a></li>
+            <li><a href="#certification" class="footer-link">Microsoft Certification</a></li>
+            <li><a href="#contact" class="footer-link">Get In Touch</a></li>
+          </ul>
+        </div>
+
+        <!-- Direct Contact Summary -->
+        <div>
+          <div class="footer-col-title">Contact Information</div>
+          <ul class="footer-links-list">
+            <li style="color: var(--text-secondary); font-size: 0.9rem;">
+              <strong>Email:</strong> <a href="mailto:muhammadraun@outlook.com" class="footer-link">muhammadraun@outlook.com</a>
+            </li>
+            <li style="color: var(--text-secondary); font-size: 0.9rem;">
+              <strong>Phone:</strong> <a href="tel:+923463456213" class="footer-link">(+92) 346 3456213</a>
+            </li>
+            <li style="color: var(--text-secondary); font-size: 0.9rem;">
+              <strong>Role:</strong> Software Developer – CRM at VeriPark
+            </li>
+            <li style="color: var(--text-secondary); font-size: 0.9rem;">
+              <strong>Location:</strong> Tank, KPK, Pakistan
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          © 2026 Muhammad Raun. All rights reserved. Built for enterprise consulting & global engineering opportunities.
+        </div>
+
+        <a href="#home" id="backToTopBtn" class="back-to-top-btn" aria-label="Scroll back to top">
+          <span>Back to Top</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="18 15 12 9 6 15"></polyline>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       PROJECT DETAILS MODAL DIALOG
+       ======================================================================== -->
+  <div id="projectModal" class="modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-container">
+      <button id="modalCloseBtn" class="modal-close-btn" aria-label="Close project modal">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div id="modalBadge" class="modal-badge"></div>
+      <h3 id="modalTitle" class="modal-title"></h3>
+
+      <div id="modalTags" class="modal-tech-tags"></div>
+
+      <div class="modal-section-title">Core Contribution</div>
+      <p id="modalContribution" class="modal-text"></p>
+
+      <div class="modal-section-title">Technical Architecture & Engineering</div>
+      <p id="modalArchitecture" class="modal-text"></p>
+
+      <div class="modal-impact-box">
+        <div class="modal-impact-title">Business & Operational Impact</div>
+        <div id="modalImpact" class="modal-impact-text"></div>
+      </div>
+
+      <div style="display: flex; justify-content: flex-end; gap: 12px; margin-top: 20px;">
+        <a href="#contact" onclick="document.getElementById('modalCloseBtn').click();" class="btn btn-primary btn-sm">
+          <span>Discuss Similar Solution</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast-container">
+    <div id="toast" class="toast">
+      <div class="toast-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+          <polyline points="22 4 12 14.01 9 11.01"></polyline>
+        </svg>
+      </div>
+      <div class="toast-message">Notification message</div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
 </html>
